@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单练习1</title>
+	<style type="text/css">
+        *{
+        	margin: 0px;padding: 0px
+        }
+		.box{
+			width:600px;height: 600px;border:1px solid #ccc;
+			margin:100px auto;
+		}
+		.box ul{
+            width: 540px;height:540px;margin:30px auto;
+
+		}
+		.box ul li{
+			list-style: none;
+			position: relative;
+			
+			
+			padding:25px 6px;
+			margin-top: 20px
+
+		}
+
+        .box ul label{
+
+        	width: 100px;display: inline-block;float: left;
+        	padding-top: 10px;
+
+        }
+
+        .box ul input{
+             width: 260px;height: 40px;float: left;display: inline-block;
+  
+        }
+        .box ul input:focus,textarea:focus{
+        	padding-right: 40px
+        }/*当鼠标点击的时候变长*/
+         .box ul input,textarea{
+         	transition: padding 1s 
+         }/*为变长做动画*/
+        .box ul li p{width: 80px;display: inline-block;float: left;
+            word-spacing: all;line-height: 20px 
+        }
+        button{
+          	width: 100%;height: 40px;border-radius: 10px;text-align: center;
+          	background: linear-gradient(to bottom,rgba(0,0,0,.9) 10%,rgba(0,0,0,.6) 40%,rgba(255,255,255,.5) 100%)
+          }
+        
+
+        input:required,textarea:required{
+
+        	background: #fff url(img/1.png) no-repeat right center;
+        	background-size: 30px
+        }
+         .box ul li input:focus:invalid,textarea:focus:invalid{
+         	background: #fff url(img/2.png) no-repeat right center;
+        	background-size: 30px;box-shadow: 0 0 5px #d45252;
+            border-color: #b03535
+         }
+          .box ul li input:focus:valid,textarea:focus:valid{
+         	background: #fff url(img/3.png) no-repeat right center;
+        	background-size: 30px;box-shadow: 0 0 5px #5cd053;
+             border-color: #28921f;
+         }
+
+
+
+		:focus{outline: none;}
+	</style>
+</head>
+<body>
+<form novalidate>
+	<div class="box">
+		<ul>
+			<li>
+				<label for="name">姓名:</label>
+				<input type="text" name="name" placeholder="请输入姓名" required>
+			</li>
+			<li>
+				<label for="email">电子邮件：</label>
+				<input type="email" name="email" placeholder="请输入正确的email" required>
+			</li>
+			<li>
+				<label for="website">网站</label>
+				<input type="url" name="website" placeholder="请输入正确的网址" required>
+				<p style="font-size: 12px">正确格式为http://wwww.searworld.com</p>
+			</li>
+			<li>
+				<label for="message">留言：</label>
+				<textarea name="message" cols="35" rows="6" required></textarea>
+			</li>
+			<li>
+				<button class="submit" type="submit">提交</button>
+			</li>
+		</ul>
+	</div>
+</form>
+
+</body>
+</html>
